@@ -19,6 +19,5 @@ from django.urls import path, include
 # http://127.0.0.1:8000/
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('post/', include('post.urls')),
-    
+    path('', include('post.urls')),
 ]
