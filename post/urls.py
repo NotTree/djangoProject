@@ -10,8 +10,8 @@ from .views import *
 
 urlpatterns = [
     path('', PostsView.as_view(), name="post_api_url"),
-    path('wat/', wat.as_view()),
-    path('tag/<str:tag>/', PostTagView.as_view()),
-    path('author/<str:author>/', PostAuthorView.as_view()),
-    path('<str:slug>/', PostView.as_view()),
-]    
+    path('wat/', wat.as_view(), name="wat"),
+    path('tag/<str:tag>/', PostTagView.as_view(), name="postTags"),
+    path('author/<str:author>/', PostAuthorView.as_view(), name="postAuthor"),
+    path('<str:slug>/', PostView.as_view(), name="View"),
+]
