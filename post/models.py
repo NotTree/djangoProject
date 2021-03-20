@@ -40,3 +40,16 @@ class Post(LikeMixin, models.Model):
 
     def __str__(self):
         return self.title
+
+# OneToOneField - 1 к 1
+# ForeignKey - 1 ко многим
+# ManyToManyField - многие ко многим
+class Comment(LikeMixin, models.Model):
+    author = models.ForeignKey(Author, on_delete=models.CASCADE)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    content = models.TextField(max_length=1260, blank=False)
+    priopity = models.PositiveIntegerField(default=2, validators=(MaxValueValidator(100.0), ))
+    likes = models.PositiveIntegerField(default=0)
+
+    def __str__(self):
+        return self.content

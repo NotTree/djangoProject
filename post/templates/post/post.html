@@ -1,4 +1,4 @@
-{% extends 'post/base.html' %}
+{% extends 'base.html' %}
 
 {% block title %} {{ post.title }} {% endblock title %}
 
@@ -22,6 +22,18 @@
             <form action="" method="POST">
                 <button class="btn btn-default" type="submit">Поствить Лайк!</button>
             </form>
+            <div class="list-group">
+              {% for comment in comments %}
+                <a href="#" class="list-group-item list-group-item-action active">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">{{ comment.author.user.username }}</h5>
+                    <small>{{ comment.author.priopity }}</small>
+                  </div>
+                  <p class="mb-1">{{ comment.content }}</p>
+                  <small>{{ comment.likes }}</small>
+                </a>
+              {% endfor %}
+            </div>
         </div>
     </main>
 {% endblock content %}

@@ -13,5 +13,6 @@ urlpatterns = [
     path('wat/', wat.as_view(), name="wat"),
     path('tag/<str:tag>/', PostTagView.as_view(), name="postTags"),
     path('author/<str:author>/', PostAuthorView.as_view(), name="postAuthor"),
+    path('create-<str:model>/', Controller.as_view(), name='controller'),
     path('<str:slug>/', PostView.as_view(), name="View"),
 ]
