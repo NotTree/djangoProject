@@ -5,7 +5,7 @@
       <div class="row">
           <div class="list-group">
               {% for post in posts %}
-                  <a href="{{ post.slug }}" class="list-group-item active">
+                  <a href="post/{{ post.slug }}" class="list-group-item active">
                   <h4 class="list-group-item-heading">{{ post.title }}</h4>
                   <p class="list-group-item-text">{{ post.author }}</p>
                   </a>

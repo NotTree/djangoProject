@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Мой аккаунт{% endblock title %}
+
+{% block content %}
+    <h3>Name: {{ object.first_name }} {{ object.last_name }}</h3>
+    <h3>Nick: {{ object.username }} </h3>
+    <h4> {{ object.date_joined }} </h4>
+    {% if object.is_active %}
+        <p>Not banned :3</p>
+    {% else %}
+        <p>Banned</p>
+    {% endif %}
+{% endblock content %}

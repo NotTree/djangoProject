@@ -7,7 +7,7 @@ class LikeMixin:
         self.likes += 1
         if self.likes % 10 == 0 and self.priopity < 100:
             self.priopity += 1                                  #1000 лайков до максимума  ❤999 == 100 priority 
-    
+
     def dislike(self):
         self.likes -= 1
         if self.likes+1 % 10 == 0 and self.priopity > 0:
